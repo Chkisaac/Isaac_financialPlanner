@@ -1,12 +1,109 @@
-# Assignment 1
+# Personal Finance Planner Node Module
 
-You will only need one file, ie, your node module, for this assignment.
+## Overview
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
+This project is a Node.js financial planner module inspired by YNAB (You Need A Budget). The module allows users to manage personal financial transactions such as income and expenses. It also provides features to calculate balances, filter transactions, summarize spending categories, and manage transaction history.
 
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
+This project was developed as part of the EGL301 Assignment 1.
 
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+---
+
+# Features
+
+The financial planner module supports the following functions:
+
+| Function                 | Description                                |
+| ------------------------ | ------------------------------------------ |
+| `addTransaction()`       | Adds an income or expense transaction      |
+| `getBalance()`           | Calculates the current account balance     |
+| `getHistory()`           | Displays transaction history               |
+| `getSummaryByCategory()` | Summarizes spending and income by category |
+| `filterTransactions()`   | Filters transactions by income or expense  |
+| `deleteTransaction()`    | Deletes a transaction using transaction ID |
+| `clearLedger()`          | Clears all stored transactions             |
+
+---
+
+# Technologies Used
+
+* Node.js
+* JavaScript
+
+---
+
+# Project Structure
+
+```txt
+Assignment1/
+│
+├── financePlanner.js
+├── app.js
+└── README.md
+```
+
+---
+
+# Installation
+
+1. Download or clone the repository.
+
+2. Open the project folder in Visual Studio Code.
+
+3. Ensure Node.js is installed on your computer.
+
+4. Run the application using:
+
+```bash
+node app.js
+```
+
+---
+
+# Example Usage
+
+```js
+const FinancialPlanner = require('./financePlanner');
+
+const myPlanner = new FinancialPlanner();
+
+myPlanner.addTransaction(5000, 'Salary', 'Monthly Paycheck');
+myPlanner.addTransaction(-1200, 'Rent', 'May Housing');
+
+console.log(myPlanner.getBalance());
+```
+
+---
+
+# Sample Output
+
+```txt
+Current Balance:
+3590
+
+Summary By Category:
+{
+  Salary: 5000,
+  Rent: -1200
+}
+```
+
+---
 
 # References
-Provide the references that you have used to support your assignment. 
+
+* YNAB (You Need A Budget): [https://www.ynab.com/](https://www.ynab.com/)
+* Node.js Documentation: [https://nodejs.org/en/docs](https://nodejs.org/en/docs)
+* MDN JavaScript Documentation: [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+---
+
+# Use of AI
+
+ChatGPT was used to assist in brainstorming the project idea, what potential modules I could include in this project and the dummy data included in this project.
+---
+
+# Author
+
+Isaac Ching
+EGL301 Assignment 1
+2026
